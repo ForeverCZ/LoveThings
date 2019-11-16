@@ -1,4 +1,5 @@
 const md5 = require('../../public/md5.js');
+var that;
 Page({
 
   /**
@@ -7,13 +8,33 @@ Page({
   data: {
     resulttext: '',
     resultData: [],
+    topImage: "../../img/textTopImage.jpg",
+    photo: "../../img/textPhoto.svg",
+    sharFriend: "../../img/textShare.svg"
   },
+  // 拍照或者选择图片
+  startPhoto: function() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        console.log("拍照或选图临时图片地址：", res.tempFilePaths[0])
+        wx.showLoading({
+          title: '识别中',
+        })
 
+        // 转化为base64编码
+        let imgBase64 = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64");
+        console.log("base64:", imgBase64);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    that = this;
   },
   // 开始拍照识别
   photorecognition: function() {
@@ -123,6 +144,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: '拍照识别文字',
+      path: 'pages/text/text'
+    }
   }
 })

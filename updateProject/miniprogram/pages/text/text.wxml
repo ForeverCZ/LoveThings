@@ -1,15 +1,21 @@
-<view class="content-wrap">
-  <view class="photo-wap">
-    <image bindtap="photorecognition" class="photo-img" src="../../img/photo-img.png"></image>
+<!-- 包裹器 -->
+<view class="r-wrap">
+  <view class="image">
+    <image src="{{topImage}}"></image>
+    <view></view>
   </view>
-  <view class="result-text-wrap">
-    <scroll-view scroll-with-animation	 scroll-top="100" scroll-y scroll-top="30" scroll-anchoring>
-      <text selectable wx:if="{{resulttext}}">{{resulttext}}</text>
-      <text wx:else>赶快拍照识别吧</text>
-    </scroll-view>
-  </view>
-
-  <view class="btn-copy">
-    <button bindtap="copy" plain="true " size="mini " class="btn">复制</button>
+  <view class="recognitionArea">
+    <view class="share_wrap">
+      <view class="top" bindtap="startPhoto">
+        <image src="{{photo}}"></image>
+        <view>拍照/选图</view>
+      </view>
+      <button open-type="share">
+        <view class="bottom">
+          <image src="{{sharFriend}}"></image>
+          <view>分享给好友</view>
+        </view>
+      </button>
+    </view>
   </view>
 </view>

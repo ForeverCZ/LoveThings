@@ -10,6 +10,7 @@
     "pages/post/post",
     "pages/garbage/garbage",
     "pages/text/text",
+    "pages/resultText/resultText",
     "pages/tanslation/tanslation",
     "pages/searchWordsPage/searchWordsPage",
     "pages/modifyTranslation/modifyTranslation"
