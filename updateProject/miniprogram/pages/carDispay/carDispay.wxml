@@ -1,0 +1,16 @@
+<view class="itemlist">
+  <view class="item" wx:for="{{carData}}" wx:key="{{index}}">
+    <view class="name">车型：{{item.name}}</view>
+    <view class="info">
+      <view class="progress">
+        <progress backgroundColor="#bfbfbf" border-radius="15" percent="{{item.score*100}}"  stroke-width="4" font-size="10" activeColor="#000" active></progress>
+      </view>
+      <view class="text1">{{item.score}}</view>
+      <view class="text2">可信度</view>
+    </view>
+    <view class="year">
+      <view>年份/</view>
+      <view>{{item.year}}</view>
+    </view>
+  </view>
+</view>

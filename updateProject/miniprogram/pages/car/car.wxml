@@ -1,0 +1,4 @@
+<view class="photo">
+<image bindtap="select" mode="widthFix" src="../../img/photo.png"></image>
+<text bindtap="select">选择图片/拍照</text>
+</view>

@@ -1,0 +1,47 @@
+<view class="word-wrap">
+  <view class="top">
+    <text>{{conversionFrom}}</text>
+    <image bindtap="conversion" src="../../img/fanzhuan.png"></image>
+    <text>{{conversionEnd}}</text>
+  </view>
+  <view class="middle">
+    <input bindtap="toSearch" disabled focus="true" type="text" placeholder="输入单词或句子"></input>
+  </view>
+  <!-- 语音识别结果区 -->
+  <view class="bottom">
+    <view class="resullt-wrp">
+      <view wx:if="{{result_bottom_result==''&&result_top_result==''}}" class="result-null">
+        <text>等待说话...</text>
+      </view>
+      <view wx:else class="result-full">
+        <view class="result-top">
+          <view class="result-top-left">
+            <text>{{result_top_result}}</text>
+          </view>
+          <view catchtap="modificationText" class="result-top-right">
+            <image src="../../img/modification.png"></image>
+          </view>
+        </view>
+        <view class="bottom-line"></view>
+        <view class="result-bottom">
+          <view class="result-bottom-left">
+            <text>{{result_bottom_result}}</text>
+          </view>
+          <view catchtap="getResltVoice" class="result-bottom-right">
+            <image src="../../img/itemVoice.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="btnFroup">
+  <view class="translationBtn">
+    <view id="zh" catchtouchstart="startSpeakChinese" catchtouchend="endSpeakChinese">中文</view>
+    <view catchtouchstart="startSpeakEnglish" catchtouchend="endtSpeakEnglish">英文</view>
+  </view>
+  <view class="translationText">
+    <view>长按说话</view>
+    <view>Hold TO Talk</view>
+  </view>
+</view>

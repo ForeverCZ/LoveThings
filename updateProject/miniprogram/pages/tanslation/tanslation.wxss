@@ -1,0 +1,151 @@
+page {
+  padding: 20rpx;
+  background: #eee;
+}
+
+/* 语言转换区 */
+
+.top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.top image {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+
+/* //输入单词或句子跳转区 */
+
+.middle {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle input {
+  text-align: center;
+  font-size: 40rpx;
+  width: 70%;
+  border-radius: 60rpx;
+  border: 2rpx #fff solid;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+/* 中英文按钮同声传译 */
+
+.btnFroup {
+  z-index: 999;
+  height: 250rpx;
+  background: #eee;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.translationBtn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.translationText {
+  padding-top: 10rpx;
+  display: flex;
+  justify-content: space-around;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.translationText view {
+  width: 220rpx;
+  text-align: center;
+}
+
+.translationBtn view {
+  color: #fff;
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 33rpx;
+  border-radius: 40rpx;
+}
+.translationBtn view:hover{
+  box-shadow:inset 0 0 20rpx 2rpx #fff;
+}
+/* 同声传译按钮区 */
+
+.translationBtn view:nth-child(1) {
+  background: linear-gradient(to right, #9000ff, #5e00ff);
+}
+
+.translationBtn view:nth-child(2) {
+  background: linear-gradient(to right, #ec008c, #6739b6);
+}
+
+/* 语音结果区 */
+
+.bottom {
+  margin-top: 100rpx;
+}
+
+.result-null {
+  font-size: 37rpx;
+  color: rgb(146, 144, 144);
+  border-radius: 10rpx;
+  padding: 40rpx;
+  width: 92%;
+  margin: 0 auto;
+  height: 250rpx;
+  background: #fff;
+}
+
+.result-full {
+  font-size: 40rpx;
+  padding: 40rpx;
+  width: 92%;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.result-full image {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+}
+
+.result-top {
+  color: rgb(146, 144, 144);
+}
+
+.result-top, .result-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.result-top-left, .result-bottom-left {
+  flex: 6;
+}
+
+.result-top-right, .result-bottom-right {
+  flex: 1;
+}
+
+/* 横线 */
+
+.bottom-line {
+  margin: 20rpx 0;
+  height: 2rpx;
+  background: #eee;
+}

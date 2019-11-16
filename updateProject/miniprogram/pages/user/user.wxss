@@ -1,0 +1,22 @@
+.user image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.user {
+  text-align: center;
+  margin-top: 280rpx;
+}
+
+.user text {
+  display: block;
+  font-size: 35rpx;
+}
+
+.user button {
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+}

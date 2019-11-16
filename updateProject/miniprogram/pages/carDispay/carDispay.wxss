@@ -1,0 +1,52 @@
+page {
+  background: #c4c2c2;
+}
+
+.item {
+  width: 730rpx;
+  margin: 0 auto 0 auto;
+  background: white;
+  padding: 15rpx 10rpx;
+  margin-top: 20rpx;
+  border-radius: 28rpx;
+}
+
+.name {
+  font-size: 35rpx;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.progress {
+  flex: 4;
+}
+
+.text1 {
+  text-align: left;
+  flex: 0.5;
+  font-size: 25rpx;
+}
+
+.text2 {
+  text-align: right;
+  flex: 1;
+  font-size: 30rpx;
+}
+
+.year {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.year view:nth-child(1) {
+  text-align: right;
+  flex: 2.6;
+}
+
+.year view:nth-child(2) {
+  flex: 1;
+}

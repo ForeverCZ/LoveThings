@@ -1,0 +1,3 @@
+<view class="content">
+  <view bindtap="jumpIndex" class="item">首页</view>
+</view>

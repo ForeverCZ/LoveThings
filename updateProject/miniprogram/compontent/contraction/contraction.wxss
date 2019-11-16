@@ -1,0 +1,20 @@
+.content{
+  width: 75rpx;
+  height: 75rpx;
+  position: fixed;
+  z-index: 9999999999;
+  bottom: 80rpx;
+  right: 30rpx;
+}
+.item{
+  background: rgba(0, 0, 0, 0.3);
+  width: 85rpx;
+  height: 85rpx;
+  font-size: 25rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}

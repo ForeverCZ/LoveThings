@@ -1,0 +1,44 @@
+<!-- 轮播图 -->
+
+<swiper indicator-dots indicator-color="#000" indicator-active-color="#ff6666" autoplay interval="2500" duration="1500" circular easing-function="easeInOutCubic">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image class="swiper-img" src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 搜索栏 -->
+
+<view class="seacrh-wrap">
+  <view class="search-content">
+    <input bindinput="getText" type="text" placeholder="请输入要查询的垃圾名(如香蕉皮、塑料袋等)" placeholder-class="placeholder"></input>
+    <icon bindtap="searchResult" type="search" size="24" color="#000"></icon>
+  </view>
+</view>
+
+<!-- 内容专区 -->
+
+<view class="result-wrap">
+  <block wx:if="{{garbage_info.length}}">
+    <view class="result-content" wx:for="{{garbage_info}}">
+      <view class="result-top">
+        <view>
+          <text class="text-type result-text-color">类型:</text>
+          <text class="result-text-conten-color">{{item.cate_name}}</text>
+        </view>
+        <view>
+          <text class="text-type result-text-color">名字:</text>
+          <text class="result-text-conten-color">{{item.garbage_name}}</text>
+        </view>
+      </view>
+      <view class="result-bottom">
+        <text class="text-advice result-text-color3">投放建议(ps):</text>
+        <text class="result-text-conten-color">{{item.ps}}</text>
+      </view>
+    </view>
+  </block>
+  <view wx:else class="wait-conten">
+    <image src="../../img/ljfxq1.png"></image>
+  </view>
+</view>

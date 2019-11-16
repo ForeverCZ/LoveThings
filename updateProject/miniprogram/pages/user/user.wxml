@@ -1,0 +1,7 @@
+<view wx:for="{{userList}}" wx:key="{{index}}" class="user" hidden="{{user}}">
+  <image src="{{item.avatarUrl}}"></image>
+  <text>{{item.nickName}}</text>
+</view>
+<view class="user">
+  <button hidden="{{btnuser}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="navigatoTo">授权登录</button>
+</view>

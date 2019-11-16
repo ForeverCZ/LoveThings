@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText": "拍照识花",
+ "usingComponents": {
+  "contraction": "../../compontent/contraction/contraction"
+}
+}

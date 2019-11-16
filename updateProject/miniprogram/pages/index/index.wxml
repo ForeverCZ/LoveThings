@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="itemList">
+    <view style="background:{{item.color1}}" class="item" wx:for="{{item}}" wx:key="{{index}}">
+      <navigator url="{{item.page}}">
+        <view class="item_top">
+          <text style="color:{{item.color2}}" class="text">{{item.text1}}</text>
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="bottom">
+          <text style="color:{{item.color3}}">{{item.text2}}             </text>
+        </view>
+        <view class="show" hidden="{{item.show}}">
+          <text>待开发...</text>
+        </view>
+      </navigator>
+
+
+    </view>
+  </view>
+</view>
+
+<!-- 客服组件 -->
+<view class="kfzj">
+  <button open-type="contact" bindcontact="handleContact">
+    <image src="../../img/kf.png"></image>
+  </button>
+</view>

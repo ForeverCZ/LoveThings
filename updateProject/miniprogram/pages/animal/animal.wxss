@@ -1,0 +1,190 @@
+.pages {
+  background: #fff2e5;
+}
+
+.face {
+  height: 500rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face image {
+  width: 500rpx;
+  /* height: 500rpx; */
+}
+
+/* 识别展示 */
+
+.result {
+  display: flex;
+  padding: 10rpx 25rpx;
+  justify-content: space-around;
+  height: 100rpx;
+  position: relative;
+}
+
+.result-text {
+  position: absolute;
+  font-size: 30rpx;
+  left: 25rpx;
+  top: 50rpx;
+}
+
+.friends {
+  position: absolute;
+  right: 25rpx;
+  bottom: 5rpx;
+}
+
+/* 结果 */
+
+.botany {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: black;
+  padding: 30rpx 25rpx;
+}
+
+.botany view {
+  width: 33.3%;
+}
+
+.botany view:nth-child(1) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.botany view:nth-child(2) {
+  text-align: center;
+}
+
+.botany view:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botany-attr:nth-child(2n) {
+  background: #f5f5f5;
+}
+
+.botany-attr {
+  padding: 30rpx 25rpx;
+  color: #479ac7;
+}
+
+.botany-view {
+  margin-bottom: 70px;
+}
+
+/* 选择图片 */
+
+.btn {
+  position: fixed;
+  bottom: 10rpx;
+  width: 100%;
+}
+
+.btn button {
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 70rpx;
+  background: #f9c;
+}
+
+/* 遮罩层 */
+
+.introd {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 32rpx;
+}
+
+.introd-view {
+  word-break: keep-all;
+  word-wrap: break-word;
+  height: 500rpx;
+  width: 600rpx;
+  margin: 50rpx auto 0 auto;
+  overflow-y: auto;
+}
+
+.introd-img image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.introd-img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin: 60rpx auto 0 auto;
+}
+
+/* 动画效果 */
+
+.animition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500rpx;
+  overflow: hidden;
+}
+
+.animition-list {
+  width: 100%;
+  height: 500rpx;
+  background: linear-gradient(to bottom, rgba(216, 179, 255, 0), rgba(216, 179, 255, 1));
+  position: relative;
+  top: -500rpx;
+  animation: myfirst 2s linear 1s infinite alternate;
+}
+
+/* 开始执行动画 */
+
+@keyframes myfirst {
+  0% {
+    left: 0;
+    top: -550rpx;
+  }
+
+  25% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  50% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  75% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  100% {
+    left: 0;
+    top: -550rpx;
+  }
+}
+
+/* 无法识别图片 */
+
+.loadMsg {
+  text-align: center;
+  position: relative;
+  top: 100rpx;
+  color: rgb(248, 37, 37);
+}

@@ -1,0 +1,39 @@
+<view class="input-warp">
+  <!-- 语言转换 -->
+  <view class="top">
+    <text>{{conversionFrom}}</text>
+    <image bindtap="conversion" src="../../img/fanzhuan.png"></image>
+    <text>{{conversionEnd}}</text>
+  </view>
+  <view class="input-content">
+    <textarea focus bindinput="getInputText" auto-height maxlength="-1" value="{{translateText}}" placeholder="请输入要翻译的内容"></textarea>
+  </view>
+</view>
+
+<view wx:if="{{translateResuleText}}" class="output">
+  <!-- 声音 -->
+  <view class="voice">
+    <image catchtap="getVoice" src="../../img/voice.png"></image>
+  </view>
+  <!-- 原文 -->
+  <view class="origin-warp">
+    <text>{{originText}}</text>
+  </view>
+  <!-- 翻译结果区 -->
+  <view class="input-content">
+    <text>{{translateResuleText}}</text>
+  </view>
+  <view class="itemTool">
+    <view class="itemVoice">
+      <image catchtap="getResltVoice" src="../../img/itemVoice.png"></image>
+    </view>
+    <view class="copy">
+      <image catchtap="copyText" src="../../img/copyImg.png"></image>
+    </view>
+    <view class="share">
+      <button open-type="share">
+        <image src="../../img/shareImg.png"></image>
+      </button>
+    </view>
+  </view>
+</view>

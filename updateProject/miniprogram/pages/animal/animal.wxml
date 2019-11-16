@@ -1,0 +1,67 @@
+<!-- 动画扫描效果 -->
+<view class="animition" wx:if="{{animition}}">
+  <view class="animition-list"></view>
+</view>
+
+
+<!-- 图片展示区域 -->
+<view class="pages">
+  <view class="face">
+    <image src="{{tempFilePath}}" mode="widthFix"></image>
+  </view>
+</view>
+
+
+<!-- 识别结果 -->
+<view class="result">
+  <text class="result-text">识别分析</text>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true" size="mini" class="friends">分享</button>
+</view>
+
+
+<!-- 属性展示 -->
+<view class="botan-view">
+  <view class="botany">
+    <view>名称</view>
+    <view>可信度</view>
+    <view>百度百科</view>
+  </view>
+
+  <!-- 循环展示 -->
+  <block wx:if="{{infomation}}" wx:for="{{botanyimg}}" wx:key="{{index}}">
+    <view class="botany botany-attr">
+      <view>{{item.name}}</view>
+      <view>{{item.score}}</view>
+      <view bindtap="baike" data-testid="{{item.baike.description}}">查看百科</view>
+    </view>
+  </block>
+
+
+</view>
+
+
+<!-- 选择图片 -->
+<view wx:if="{{btnOpen}}" class="btn">
+  <button hover-class="none" type="primary" bindtap="faceImage">选择图片</button>
+</view>
+
+<!-- 百度百科展示遮罩层 -->
+<view class="introd" wx:if="{{introd}}">
+  <view class="introd-view">
+    {{baikedata}}
+  </view>
+  <!-- 取消按钮 -->
+  <view class="introd-img" bindtap="introdbaike">
+    <image src="../../img/quxiao.png" mode="widthFix"></image>
+  </view>
+</view>
+
+<!-- 加载错误或者无法识别 -->
+
+<view class="loadMsg" wx:if="{{loadMsg}}">
+  无法识别请重新选择图片！
+</view>
+
+
+<!-- 返回首页 -->
+<!-- <contraction></contraction> -->

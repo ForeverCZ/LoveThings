@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "拍照识动物",
+  "usingComponents": {
+    "contraction": "../../compontent/contraction/contraction"
+  }
+}

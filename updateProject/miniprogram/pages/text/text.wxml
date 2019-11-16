@@ -1,0 +1,15 @@
+<view class="content-wrap">
+  <view class="photo-wap">
+    <image bindtap="photorecognition" class="photo-img" src="../../img/photo-img.png"></image>
+  </view>
+  <view class="result-text-wrap">
+    <scroll-view scroll-with-animation	 scroll-top="100" scroll-y scroll-top="30" scroll-anchoring>
+      <text selectable wx:if="{{resulttext}}">{{resulttext}}</text>
+      <text wx:else>赶快拍照识别吧</text>
+    </scroll-view>
+  </view>
+
+  <view class="btn-copy">
+    <button bindtap="copy" plain="true " size="mini " class="btn">复制</button>
+  </view>
+</view>

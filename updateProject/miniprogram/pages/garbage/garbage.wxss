@@ -1,0 +1,107 @@
+page {
+  background: #dfc;
+  margin: 0;
+  padding: 0;
+}
+
+/* 轮播图 */
+
+.swiper-img {
+  height: 170px;
+  width: 750rpx;
+  border-radius: 20rpx;
+}
+
+/* 搜索栏  */
+
+.seacrh-wrap {
+  margin-top: 10rpx;
+}
+
+.search-content {
+  position: relative;
+}
+
+.search-content input {
+  padding: 20rpx 20rpx 20rpx 30rpx;
+  border-radius: 50rpx;
+  border: 1px solid rgb(63, 60, 60);
+  color: rgb(243, 102, 36);
+}
+
+.search-content input:hover {
+  border: 1px solid #fff;
+  color: rgb(223, 77, 10);
+}
+
+.search-content icon {
+  position: absolute;
+  right: 20rpx;
+  top: 25rpx;
+  z-index: 999;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  color: rgb(107, 105, 105);
+}
+
+/* 内容专区 */
+
+.result-wrap {
+  width: 700rpx;
+  height: 700rpx;
+  position: absolute;
+  margin-left: 25rpx;
+  border-radius: 350rpx;
+  background: rgba(255, 117, 26, 0.3);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-content {
+  width: 700rpx;
+  height: 700rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30rpx;
+}
+
+.result-top {
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.result-bottom {
+  margin-bottom: 70rpx;
+}
+
+.result-top view {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.result-text-color {
+  color: rgb(244, 248, 250);
+  font-weight: bold;
+}
+
+.result-text-color3 {
+  color: rgb(252, 155, 10);
+  font-weight: bold;
+}
+
+.result-text-conten-color {
+  color: rgb(52, 53, 52);
+}
+
+.wait-conten image {
+  width: 200rpx;
+  height: 200rpx;
+}

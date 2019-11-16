@@ -1,0 +1,95 @@
+page {
+  background: #eee;
+}
+
+/* 原文结果区 */
+
+.origin-warp {
+  padding: 20rpx 0 10rpx 0;
+}
+
+/* 语言转化区 */
+
+.top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.top image {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+
+/* 翻译结果区 */
+
+.input-warp {
+  background: #fff;
+}
+
+.input-content {
+  margin-top: 20rpx;
+}
+
+.input-content textarea {
+  padding: 20rpx;
+  font-size: 38rpx;
+}
+
+.output {
+  padding: 20rpx 20rpx 10rpx 20rpx;
+  background: #fff;
+  margin-top: 5rpx;
+}
+
+.voice image {
+  width: 60rpx;
+  height: 40rpx;
+}
+
+.itemTool {
+  padding-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.itemTool .itemVoice {
+  flex: 3;
+}
+
+.itemTool .copy {
+  flex: 1;
+  text-align: center;
+}
+
+.itemTool .share {
+  flex: 1;
+  background: transparent;
+  text-align: center;
+}
+
+.itemTool image {
+  width: 60rpx;
+  height: 50rpx;
+}
+
+.share button {
+  width: 60rpx;
+  height: 50rpx;
+  background: transparent;
+  position: relative;
+}
+
+.share button image {
+  position: absolute;
+  right: 0;
+  top: -4rpx;
+  left: 0;
+}
+
+button::after {
+  border: none;
+}

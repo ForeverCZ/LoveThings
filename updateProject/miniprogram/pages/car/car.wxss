@@ -1,0 +1,20 @@
+page{
+  background: url(http://img1.imgtn.bdimg.com/it/u=2508994323,2569595522&fm=26&gp=0.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.photo{
+  margin-top:820rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.photo image{
+  width: 200rpx;
+  margin-bottom: 20rpx;
+}
+.photo text{
+  color: #f2f2f2;
+  font-size: 30rpx;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+<view class="textarea-wrap">
+  <textarea bindconfirm="confirm" bindinput="inputchange" auto-height focus	  adjust-position maxlength="{{maxlength}}" value="{{modifyText}}" bindfocus="bindfocus" bindblur="bindblur"></textarea>
+</view>
+<view class="tool-wrap {{toTop?'toTop':''}}">
+  <view>
+    <text>还可以输入{{maxlength-surplusTextNumber}}字...</text>
+  </view>
+  <view><image catchtap="deleteResult" src="../../img/delete.png"></image></view>
+</view>

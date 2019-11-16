@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/carDispay/carDispay",
+    "pages/car/car",
+    "pages/animal/animal",
+    "pages/flower/flower",
+    "pages/vegetables/vegetables",
+    "pages/user/user",
+    "pages/post/post",
+    "pages/garbage/garbage",
+    "pages/text/text",
+    "pages/tanslation/tanslation",
+    "pages/searchWordsPage/searchWordsPage",
+    "pages/modifyTranslation/modifyTranslation"
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱识物",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "大厅",
+        "iconPath": "img/list.png",
+        "selectedIconPath": "img/listb.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "img/wodea.png",
+        "selectedIconPath": "img/wodeb.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.2",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
+}
