@@ -1,6 +1,6 @@
 @import "public/share.wxss";
 
-page,view,image,swiper,swiper-item,navigator,video{
+page, view, image, swiper, swiper-item, navigator, video {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -1,4 +1,4 @@
-const md5 = require('../../public/md5.js');
+// const md5 = require('../../public/md5.js');
 var that;
 Page({
 
@@ -6,11 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resulttext: '',
-    resultData: [],
     topImage: "../../img/textTopImage.jpg",
     photo: "../../img/textPhoto.svg",
-    sharFriend: "../../img/textShare.svg"
+    sharFriend: "../../img/textShare.svg",
+    words_result: null
   },
   // 拍照或者选择图片
   startPhoto: function() {
@@ -19,15 +18,54 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
-        console.log("拍照或选图临时图片地址：", res.tempFilePaths[0])
-        wx.showLoading({
-          title: '识别中',
-        })
 
         // 转化为base64编码
         let imgBase64 = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64");
-        console.log("base64:", imgBase64);
+
+        // 调用云函数
+        that.aiText(imgBase64);
       }
+    })
+  },
+  // 调用云函数
+  aiText: function(imgbase) {
+    wx.showLoading({
+      title: '扫描中',
+    })
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'recognizeText',
+      // 传递给云函数的event参数
+      data: {
+        image: imgbase
+      }
+    }).then(res => {
+      // output: res.result === 3
+      // console.log(res.result.text.words_result)
+      let resullts = res.result.text.words_result;
+      // 定义拼接数据
+      var splicingData = "";
+      // 拼接数据
+      for (var data in resullts) {
+        splicingData += resullts[data].words
+        if (data < resullts.length - 1)
+          splicingData += '\n';
+      }
+      console.log("提取数据:", splicingData)
+      wx.hideLoading();
+      wx.navigateTo({
+        url: '../resultText/resultText?splicingData=' + splicingData,
+        success: res => {
+          console.log(res)
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+
+    }).catch(err => {
+      // handle error
+      console.log(err)
     })
   },
   /**
@@ -36,61 +74,61 @@ Page({
   onLoad: function(options) {
     that = this;
   },
-  // 开始拍照识别
-  photorecognition: function() {
-    let that = this;
-    wx.chooseImage({
-      count: '1',
-      sourceType: ['album', 'camera'],
-      success: function(res) {
-        wx.showLoading({
-          title: '识别中',
-        })
-        // console.log(res.tempFilePaths[0]);
-        // 转化为base64
-        var imgbase = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64");
-        // console.log(imgbase)
-        let AppKey = "8fba45b93f2d70e610f1c68e0a32dde6";
-        let SecretKey = "8d7ac2440a0393f524a19edd98c989cf";
-        let timestamp = new Date().getTime();
-        let sign = md5.hexMD5(SecretKey + timestamp);
-        wx.request({
-          method: 'post',
-          url: 'https://aiapi.jd.com/jdai/ocr_universal_v2?appkey=' + AppKey + "&timestamp=" + timestamp + "&sign=" + sign,
-          data: {
-            // imageUrl: res.tempFilePaths[0],
-            imageBase64Str: imgbase
-          },
-          success: res => {
-            wx.hideLoading();
-            // console.log(res.data.result.resultData)
-            that.setData({
-              resultData: res.data.result.resultData
-            })
-            var dataString = "";
-            for (var data in that.data.resultData) {
-              dataString += that.data.resultData[data].text
-              if (data < that.data.resultData.length - 1) {
-                dataString += "\n";
-              }
-            }
-            that.setData({
-              resulttext: dataString
-            })
-          }
-        })
-      },
-    })
-  },
+  // // 开始拍照识别
+  // photorecognition: function() {
+  //   let that = this;
+  //   wx.chooseImage({
+  //     count: '1',
+  //     sourceType: ['album', 'camera'],
+  //     success: function(res) {
+  //       wx.showLoading({
+  //         title: '识别中',
+  //       })
+  //       // console.log(res.tempFilePaths[0]);
+  //       // 转化为base64
+  //       var imgbase = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64");
+  //       // console.log(imgbase)
+  //       let AppKey = "8fba45b93f2d70e610f1c68e0a32dde6";
+  //       let SecretKey = "8d7ac2440a0393f524a19edd98c989cf";
+  //       let timestamp = new Date().getTime();
+  //       let sign = md5.hexMD5(SecretKey + timestamp);
+  //       wx.request({
+  //         method: 'post',
+  //         url: 'https://aiapi.jd.com/jdai/ocr_universal_v2?appkey=' + AppKey + "&timestamp=" + timestamp + "&sign=" + sign,
+  //         data: {
+  //           // imageUrl: res.tempFilePaths[0],
+  //           imageBase64Str: imgbase
+  //         },
+  //         success: res => {
+  //           wx.hideLoading();
+  //           // console.log(res.data.result.resultData)
+  //           that.setData({
+  //             resultData: res.data.result.resultData
+  //           })
+  //           var dataString = "";
+  //           for (var data in that.data.resultData) {
+  //             dataString += that.data.resultData[data].text
+  //             if (data < that.data.resultData.length - 1) {
+  //               dataString += "\n";
+  //             }
+  //           }
+  //           that.setData({
+  //             resulttext: dataString
+  //           })
+  //         }
+  //       })
+  //     },
+  //   })
+  // },
   // 复制文本
-  copy: function() {
-    wx.setClipboardData({
-      data: this.data.resulttext,
-      success(res) {
-        console.log(res)
-      }
-    })
-  },
+  // copy: function() {
+  //   wx.setClipboardData({
+  //     data: this.data.resulttext,
+  //     success(res) {
+  //       console.log(res)
+  //     }
+  //   })
+  // },
   // // 修改文本
   // modificationResult: function(event) {
   //   // console.log(event.detail.value)

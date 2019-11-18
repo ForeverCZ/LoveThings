@@ -1,1 +1,25 @@
-/* pages/resultText/resultText.wxss */
+.conten_wrap {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conten_wrap textarea {
+  width: 100%;
+  padding: 1x0rpx;
+  height: 70vh;
+}
+
+.conten_wrap button {
+  width: 40%;
+  color: #fff;
+  font-size: 34rpx;
+  background:  #8883ff;
+  border-radius: 30rpx;
+}
+
+button::after {
+  border: none;
+}

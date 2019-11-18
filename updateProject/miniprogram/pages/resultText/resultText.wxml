@@ -1,2 +1,5 @@
 <!--pages/resultText/resultText.wxml-->
-<text>pages/resultText/resultText.wxml</text>
+<view class="conten_wrap">
+  <textarea value="{{splicingData}}" maxlength="-1" show-confirm-bar bindinput="getResult"></textarea>
+  <button bindtap="copy">复制文本</button>
+</view>
