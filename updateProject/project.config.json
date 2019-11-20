@@ -47,19 +47,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/text/text",
-					"pathName": "pages/text/text",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/modifyTranslation/modifyTranslation",
-					"pathName": "pages/modifyTranslation/modifyTranslation",
+					"name": "pages/tanslation/tanslation",
+					"pathName": "pages/tanslation/tanslation",
 					"query": "",
 					"scene": null
 				}

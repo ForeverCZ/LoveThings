@@ -9,7 +9,8 @@ Page({
     topImage: "../../img/textTopImage.jpg",
     photo: "../../img/textPhoto.svg",
     sharFriend: "../../img/textShare.svg",
-    words_result: null
+    words_result: null,
+    loading: false
   },
   // 拍照或者选择图片
   startPhoto: function() {
@@ -18,7 +19,9 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
-
+        that.setData({
+          loading: true
+        })
         // 转化为base64编码
         let imgBase64 = wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64");
 
@@ -29,9 +32,6 @@ Page({
   },
   // 调用云函数
   aiText: function(imgbase) {
-    wx.showLoading({
-      title: '扫描中',
-    })
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'recognizeText',
@@ -40,8 +40,10 @@ Page({
         image: imgbase
       }
     }).then(res => {
-      // output: res.result === 3
-      // console.log(res.result.text.words_result)
+      // 调用成功
+      that.setData({
+        loading: false
+      })
       let resullts = res.result.text.words_result;
       // 定义拼接数据
       var splicingData = "";
@@ -52,7 +54,6 @@ Page({
           splicingData += '\n';
       }
       console.log("提取数据:", splicingData)
-      wx.hideLoading();
       wx.navigateTo({
         url: '../resultText/resultText?splicingData=' + splicingData,
         success: res => {

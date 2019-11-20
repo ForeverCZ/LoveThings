@@ -13,7 +13,9 @@ Page({
     result_top_result: "",
     result_bottom_result: "",
     lfromLLanguage: "",
-    ltoLanguage: ''
+    ltoLanguage: '',
+    pressClass1: false,
+    pressClass2: false
   },
   // 修改文本
   modificationText: function() {
@@ -21,38 +23,46 @@ Page({
     //   title: '暂不开放',
     //   icon: "none",
     //   success: res => {
-        
+
     //   }
     // })
     wx.navigateTo({
-          url: '../modifyTranslation/modifyTranslation?lfromLLanguage=' + this.data.lfromLLanguage + "&ltoLanguage=" + this.data.ltoLanguage + "&result_top_result=" + this.data.result_top_result,
-          success: res => {
-            console.log(res)
-          }
-        })
+      url: '../modifyTranslation/modifyTranslation?lfromLLanguage=' + this.data.lfromLLanguage + "&ltoLanguage=" + this.data.ltoLanguage + "&result_top_result=" + this.data.result_top_result,
+      success: res => {
+        console.log(res)
+      }
+    })
   },
   // 开始录音中文
   startSpeakChinese: function() {
     this.setData({
       lfromLLanguage: "zh_CN",
-      ltoLanguage: 'en_US'
+      ltoLanguage: 'en_US',
+      pressClass1: true
     })
     this.streamRecord();
   },
   // 结束录音中文
   endSpeakChinese: function() {
+    this.setData({
+      pressClass1: false
+    })
     this.endRecord();
   },
   // 开始录音英文
   startSpeakEnglish: function() {
     this.setData({
       lfromLLanguage: "en_US",
-      ltoLanguage: 'zh_CN'
+      ltoLanguage: 'zh_CN',
+      pressClass2: true
     })
     this.streamRecord();
   },
   // 结束录音英文
   endtSpeakEnglish: function() {
+    this.setData({
+      pressClass2: false
+    })
     this.endRecord();
   },
   // 获得翻译录音

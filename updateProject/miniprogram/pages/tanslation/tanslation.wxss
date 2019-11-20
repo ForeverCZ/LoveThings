@@ -80,9 +80,12 @@ page {
   font-size: 33rpx;
   border-radius: 40rpx;
 }
-.translationBtn view:hover{
-  box-shadow:inset 0 0 20rpx 2rpx #fff;
+
+.press {
+  box-shadow: inset 0 0 20rpx 6rpx #fff;
+  border: 1px solid #fff;
 }
+
 /* 同声传译按钮区 */
 
 .translationBtn view:nth-child(1) {

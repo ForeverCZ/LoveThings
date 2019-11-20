@@ -19,3 +19,8 @@
     </view>
   </view>
 </view>
+
+<!-- 加载组件 -->
+<view wx:if="{{loading}}" class="loading">
+  <van-loading custom-class="loadingToast" color="#9eccff" size="24px">正在识别</van-loading>
+</view>

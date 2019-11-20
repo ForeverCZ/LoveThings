@@ -37,8 +37,8 @@
 </view>
 <view class="btnFroup">
   <view class="translationBtn">
-    <view id="zh" catchtouchstart="startSpeakChinese" catchtouchend="endSpeakChinese">中文</view>
-    <view catchtouchstart="startSpeakEnglish" catchtouchend="endtSpeakEnglish">英文</view>
+    <view class="{{pressClass1?'press':''}}" id="zh" catchtouchstart="startSpeakChinese" catchtouchend="endSpeakChinese">中文</view>
+    <view class="{{pressClass2?'press':''}}" catchtouchstart="startSpeakEnglish" catchtouchend="endtSpeakEnglish">英文</view>
   </view>
   <view class="translationText">
     <view>长按说话</view>

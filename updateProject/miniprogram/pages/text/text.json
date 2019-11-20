@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-loading": "../../vantUi/dist/loading/index"
+  },
   "navigationBarTitleText": "拍照识别文字",
-  "disableScroll":true
+  "disableScroll": true
 }
