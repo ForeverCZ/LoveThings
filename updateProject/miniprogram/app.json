@@ -45,6 +45,9 @@
       "provider": "wx069ba97219f66d99"
     }
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx7934534119a27262"
+  ],
   "requiredBackgroundModes": [
     "audio",
     "location"

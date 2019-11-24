@@ -1,5 +1,6 @@
 <view class="page">
   <view class="itemList">
+    <!-- 爱识物循环遍历 -->
     <view style="background:{{item.color1}}" class="item" wx:for="{{item}}" wx:key="{{index}}">
       <navigator url="{{item.page}}">
         <view class="item_top">
@@ -13,8 +14,18 @@
           <text>待开发...</text>
         </view>
       </navigator>
-
-
+    </view>
+    <!-- 跳转到爱存储 -->
+    <view style="background:#ffe4b1" class="item">
+      <navigator target="miniProgram" open-type="navigate" app-id="wx7934534119a27262" path="" version="release">
+        <view class="item_top">
+          <text style="color:#ffa976" class="text">文件存储</text>
+          <image src="../../img/fileSave.png"></image>
+        </view>
+        <view class="bottom">
+          <text style="color:#ffae7b">轻量级文件存储             </text>
+        </view>
+      </navigator>
     </view>
   </view>
 </view>

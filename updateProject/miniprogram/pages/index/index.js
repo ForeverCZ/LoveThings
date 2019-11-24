@@ -64,7 +64,7 @@ Page({
         show: true,
         page: "../text/text"
       }, {
-        img: "../../img/tanslation.png",
+        img: "../../img/item7.png",
         color1: "#ffe6cc",
         color2: "#ffa64d",
         color3: "#ffbf80",
